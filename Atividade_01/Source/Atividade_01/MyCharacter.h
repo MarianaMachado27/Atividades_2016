@@ -35,8 +35,6 @@ private:
 	UPROPERTY(EditAnywhere)
 		USpringArmComponent* CameraBoom;
 	UPROPERTY(EditAnywhere)
-		UArrowComponent* ArrowComp;
-	UPROPERTY(EditAnywhere)
 		int Life = 100;
 
 	void MoveForward(float Value);

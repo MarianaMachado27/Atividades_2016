@@ -21,11 +21,6 @@ AMyCharacter::AMyCharacter()
 	CameraBoom->AttachTo(RootComponent);
 	PlayerCamera->AttachTo(CameraBoom);
 
-	ArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("ArrowComp"));
-	ArrowComp->SetHiddenInGame(false);
-	ArrowComp->ArrowSize = 2.0f;
-	ArrowComp->AttachTo(MeshComp);
-
 	GetCharacterMovement()->MaxWalkSpeed = 400;
 
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
@@ -65,12 +60,12 @@ void AMyCharacter::SetupPlayerInputComponent(class UInputComponent* InputCompone
 }
 
 void AMyCharacter::MoveForward(float Value) {
-	FVector Forward(0, 1, 0);
+	FVector Forward(1, 0, 0);
 	AddMovementInput(Forward, Value);
 }
 
 void AMyCharacter::MoveRight(float Value) {
-	FVector Right(1, 0, 0);
+	FVector Right(0, 1, 0);
 	AddMovementInput(Right, Value);
 }
 
